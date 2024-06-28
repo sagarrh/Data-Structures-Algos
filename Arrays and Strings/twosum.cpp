@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//using brute force
+
 vector<int> twosum(vector<int> arr,int target){
     vector<int> result;
 
