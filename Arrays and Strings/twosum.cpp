@@ -9,8 +9,8 @@ vector<int> twosum(vector<int> arr,int target){
     vector<int> result;
 
     for(int i=0;i<arr.size();i++){
-        for(int j=0;j<arr.size();j++){
-            if(i!=j && arr[i]+arr[j]==target){
+        for(int j=i+1;j<arr.size();j++){
+            if(arr[i]+arr[j]==target){
                 result.push_back(arr[i]);
                 result.push_back(arr[j]);
                 break;
