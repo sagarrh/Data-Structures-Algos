@@ -1,30 +1,29 @@
 #include <iostream>
 #include <unordered_set>
 #include <string>
+#include <unordered_set>
+
+
+//this is using brute force approach
 
 using namespace std;
 
 int lengthOfLongestSubstring(string s) {
     int maxLength = 0;
     int n = s.length();
+    for(int i=0;i<n;i++){
+        int currentlenght=0;
+        unordered_set<char> something;
+        for(int j=i;j<n;j++){
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = i; j < n; ++j) {
-            unordered_set<char> seen;
-            bool allUnique = true;
-            for (int k = i; k <= j; ++k) {
-                if (seen.find(s[k]) != seen.end()) {
-                    allUnique = false;
-                    break;
-                }
-                seen.insert(s[k]);
+            if(something.find(s[j])!=something.end()){
+                break;
             }
-            if (allUnique) {
-                maxLength = max(maxLength, j - i + 1);
-            }
+            something.insert(s[j]);
+            currentlenght++;
         }
+        maxLength=max(maxLength,currentlenght);
     }
-
     return maxLength;
 }
 

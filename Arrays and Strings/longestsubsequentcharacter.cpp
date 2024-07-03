@@ -2,6 +2,9 @@
 #include <unordered_map>
 #include <algorithm>
 
+
+//this is sliding window method
+
 using namespace std;
 
 int lengthOfLongestSubstring(string s) {
@@ -19,7 +22,6 @@ int lengthOfLongestSubstring(string s) {
         
         maxLength = max(maxLength, end - start + 1);
     }
-    
     return maxLength;
 }
 
