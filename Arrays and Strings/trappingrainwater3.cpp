@@ -2,11 +2,12 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
 
 //using two pointer ...most efficient approach for solving
 
-int trap(std::vector<int>& height) {
-    int n = height.size();
+int trap(vector<int> height) {
+    int n = height.size();  
     if (n <= 2) {
         return 0;
     }
@@ -32,12 +33,11 @@ int trap(std::vector<int>& height) {
             --right;
         }
     }
-
     return waterTrapped;
 }
 
 int main() {
-    std::vector<int> height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-    std::cout << "Total water trapped: " << trap(height) << std::endl;  // Output: 6
+   vector<int> height = {3, 1, 2, 4, 0, 1, 3, 2, 1, 2, 1, 2, 3};
+    cout << "Total water trapped: " << trap(height);
     return 0;
 }
