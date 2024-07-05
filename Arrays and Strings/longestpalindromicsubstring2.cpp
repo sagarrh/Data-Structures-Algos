@@ -9,8 +9,8 @@ using namespace std;
 
 int expandAroundCenter(string s,int left,int right){
     while(left>=0 && right <=s.size() && s[left]==s[right]){
-        left++;
-        right--;
+        left--;
+        right++;
     }
     return right-left-1;
 
@@ -33,7 +33,7 @@ string longest(string s){
             end=i+len/2;
         }
     }
-    
+
     return s.substr(start,end-start+1);
 }
 
