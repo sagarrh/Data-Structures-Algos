@@ -87,16 +87,5 @@ int main() {
     cout << "Merged List:" << endl;
     printList(mergedList);
 
-    // Clean up memory
-    while (mergedList != nullptr) {
-        ListNode *temp = mergedList;
-        mergedList = mergedList->next;
-        delete temp;
-    }
-
-    delete l1;
-    delete l2;
-    delete l3;
-
-    return 0;
+    
 }
